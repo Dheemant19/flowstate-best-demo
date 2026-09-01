@@ -1,4 +1,4 @@
-const session = {
+const recordedSession = {
   mode: "recorded_demo",
   session_id: "session-20260831T200541276043Z-936d721c",
   experiment_id: "E3_mmoe_longview_click_bce-a77ffb2b",
@@ -18,5 +18,5 @@ const session = {
 
 export default function handler(_request, response) {
   response.setHeader("Cache-Control", "public, max-age=3600, s-maxage=3600");
-  response.status(200).json(session);
+  response.status(200).json(recordedSession);
 }

@@ -1,6 +1,6 @@
-# FlowState — Best-Run Demo
+# FlowState — Recorded Best-Run Observer
 
-A data-free presentation of FlowState's recorded validation-best session. It is intentionally a mock: the page shows the selected model, validation metrics, audit trail, final-package check, and integrity rules, but it does not load data, train a model, expose credentials, or make live model calls.
+This repository ships the **same FlowState observer interface** as the main project, preloaded with a safe, read-only recording of the validation-best session. It contains the exact workflow canvas, experiment history, data profile, resources, package view, and autonomy log; it does not include raw data, checkpoints, credentials, test labels, or live training.
 
 ## Recorded session
 
@@ -39,7 +39,7 @@ npm run preview
 3. Vercel detects Vite. Keep the defaults: build command `npm run build`, output directory `dist`.
 4. Click **Deploy**. No environment variables are required.
 
-The optional `GET /api/session` Vercel function returns the same recorded session metadata as JSON. The browser UI itself is static and needs no backend connection.
+`GET /api/session` is a small Vercel mock endpoint for the high-level recorded session summary. The observer itself loads `public/mock-session.json`, which contains the redacted ledger snapshot and 163 recorded events used to render the real observer UI without a live backend.
 
 ## Scope
 
